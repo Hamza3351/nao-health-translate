@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
+/* =========================
+   Root Variables & Theme
+   ========================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb; /* Light gray background */
+  --foreground: #111827; /* Dark text */
+  --accent: #2563eb;     /* Tailwind blue-600 */
+  --accent-hover: #1d4ed8;
+  --radius: 1rem;
+  --transition: 0.3s ease-in-out;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a; /* Slate-900 */
+    --foreground: #f9fafb; /* Gray-50 */
+    --accent: #3b82f6;     /* Blue-500 */
+    --accent-hover: #60a5fa;
   }
+}
+
+/* =========================
+   Base Styles
+   ========================= */
+* {
+  @apply transition-colors duration-300 ease-in-out;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  @apply antialiased;
+}
+
+/* =========================
+   Layout Helpers
+   ========================= */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* =========================
+   Scrollbar (for desktop polish)
+   ========================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 9999px;
+}
+
+/* =========================
+   Reusable UI Elements
+   ========================= */
+.card {
+  @apply bg-white dark:bg-slate-800 shadow-md rounded-2xl p-6;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium text-white;
+  background: var(--accent);
+  transition: background var(--transition);
+}
+
+.btn:hover {
+  background: var(--accent-hover);
 }
