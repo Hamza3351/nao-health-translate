@@ -1,5 +1,12 @@
 # Nao Health Translate
 
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://vercel.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-API-412991?logo=openai)](https://openai.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 A prototype **healthcare translation web app** built with **Next.js + React**, enabling real-time **speech-to-text, translation, and text-to-speech** for multilingual medical communication.  
 
 Deployed on **Vercel** for easy access.
