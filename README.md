@@ -1,4 +1,4 @@
-# 🌍 Nao Health Translate
+# Nao Health Translate
 
 A prototype **healthcare translation web app** built with **Next.js + React**, enabling real-time **speech-to-text, translation, and text-to-speech** for multilingual medical communication.  
 
@@ -26,3 +26,38 @@ Deployed on **Vercel** for easy access.
 ## 🛠 Code Documentation  
 
 ### 📂 Project Structure
+```bash
+/src
+  /app
+    /api
+      /translate/route.ts   # API route for translation (calls OpenAI API)
+  /components
+      Transcriber.tsx       # Speech recognition + transcript display
+      Translator.tsx        # Handles translation + audio playback
+  /app/page.tsx             # Main UI entry point
+  /app/layout.tsx           # Global layout + metadata
+next.config.ts              # Next.js config (ESLint/TypeScript handling)
+```
+
+### ⚙️ Core APIs & Tools
+- **Speech Recognition** → Web Speech API  
+- **Translation** → OpenAI API (`gpt-4o-mini` or similar)  
+- **Text-to-Speech** → Web Speech Synthesis API  
+- **Deployment** → Vercel (serverless hosting)  
+
+### 🔐 Security & Privacy
+- ✅ **No storage of transcripts** → everything stays in browser memory.  
+- ✅ **HTTPS enforced** → secure communication via Vercel.  
+- ✅ **Environment variables** protect API keys (not in client code).  
+- ✅ **Minimal logging** → requests only processed, not stored.  
+
+---
+
+- UI is component-based (Transcriber.tsx + Translator.tsx).
+- Next.js 15.5.2 with Turbopack used for fast builds.
+- ESLint/TS errors ignored in production to speed prototyping.
+
+### 📌 Disclaimer
+
+This is a prototype demo for educational purposes.
+It is not HIPAA-compliant and should not be used for real medical decision-making.
